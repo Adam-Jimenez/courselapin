@@ -6,4 +6,12 @@ public class Lapin{
        mPosition=0; 
        mCarrotes=0;
     }
+
+    public int getNbCarrote(){
+        return mCarrotes;
+    }
+
+    public int getPosition(){
+        return mPosition;
+    }
 }

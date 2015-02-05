@@ -12,7 +12,20 @@ public class Course{
         //de chance d'avoir une carotte
         //les lapins crees auront comme id leur index dans la piste de course
         mLapins = new Lapin[pNbLapins];
+        mCarrotte = new boolean[pNbLapins][pLongueur];
         mLongueur = pLongueur;
+
+        //Initialise carrotes
+        for(int i = 0; i<mCarrotte.length; i++){
+            for(int j = 0; j<mCarrotte[0].length; i++){
+                mCarrotte[i][j] = Math.random() < 0.1;
+            }
+        }
+
+        //Initialise Lapins
+        for(int i = 0; i<mLapins.length; i++){
+            mLapins[i] = new Lapin();
+        }
 
     }
     /**
@@ -23,22 +36,21 @@ public class Course{
     * @return boolean true s'il y a une carotte a la position donnee, false sinon
     */
     public boolean isCarotte(int pRangee, int pColonne){
-        return false;
+        return mCarrotte[pRangee][pColonne];
     }
     /**
     * Fonction d'acces au nombre de lapins dans la course
     * @return int le nombre de lapins
     */
     public int getNbLapins(){
-        return 1;
+        return mLapins.length;
     }
     /**
     * Fonction d'acces a la longueur de la piste de course
     * @return int la longueur de la piste 
     */
     public int getLongueur(){
-
-        return 10;
+        return mLongueur;
     }
     /**
     * Fonction d'acces au nombre de lapin cumule par le lapin 
@@ -47,7 +59,7 @@ public class Course{
     * @return int le nombre de carottes accumulees par le lapin
     */
     public int getLapinNbCarotte(int pIdxLapin){
-        return 0; 
+        return mLapins[pIdxLapin].getNbCarrote(); 
     }
 
     /**
@@ -56,7 +68,7 @@ public class Course{
     * @return int la position du lapin
     */
    public int getPosition(int pIdxLapin){
-        return -1;
+        return mLapins[pIdxLapin].getPosition();
     }	
 
     /**
