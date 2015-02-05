@@ -1,4 +1,5 @@
 public class Course{
+    Lapin[] lapins;
     /**
     * Constructeur de la classe
     * @param pLongueur la longueur de la piste
