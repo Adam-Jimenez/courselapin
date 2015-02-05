@@ -17,7 +17,7 @@ public class Course{
 
         //Initialise carrotes
         for(int i = 0; i<mCarrotte.length; i++){
-            for(int j = 0; j<mCarrotte[0].length; i++){
+            for(int j = 0; j<mCarrotte[0].length; j++){
                 mCarrotte[i][j] = Math.random() < 0.1;
             }
         }
