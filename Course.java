@@ -1,5 +1,7 @@
 public class Course{
-    Lapin[] lapins;
+    private Lapin[] mLapins;
+    private boolean[][] mCarrotte;
+    private int mLongueur;
     /**
     * Constructeur de la classe
     * @param pLongueur la longueur de la piste
@@ -9,6 +11,9 @@ public class Course{
         //on generera de facon aleatoire les carottes. Chaque case de la piste a 10% 
         //de chance d'avoir une carotte
         //les lapins crees auront comme id leur index dans la piste de course
+        mLapins = new Lapin[pNbLapins];
+        mLongueur = pLongueur;
+
     }
     /**
     * Indique s'il y a une carotte aux coordonnees (pRangee, pColonne)
