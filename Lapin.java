@@ -1,7 +1,9 @@
 public class Lapin{
     private int mCarottes;
     private int mPosition;
-    public Lapin(){
+    // besoin de numero pour constructeur
+    public Lapin(pNumero){
+        mNumero = pNumero;
         mCarottes = 0;
         mPosition = 0;
     }
