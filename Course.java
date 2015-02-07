@@ -25,7 +25,7 @@ public class Course{
 
         //Initialise Lapins
         for(int i = 0; i<mLapins.length; i++){
-            mLapins[i] = new Lapin();
+            mLapins[i] = new Lapin(i);
         }
 
     }
@@ -80,7 +80,17 @@ public class Course{
     * 
     */
     public void Step(){
-
+        for(int i = 0; i<mLapins.length; i++){  //Boucle sur chaque lapin
+            int deplacement = mLapins[i].avance();  //Les fait avancer
+            if(mLapins[i].getPosition()>=mLongueur)
+                mLapins[i].setPosition(mLongueur);
+            for(int j = mLapins[i].getPosition(); j>=mLapins[i].getPosition()-deplacement; j--){ //Boucle sur les cases sur lesquels il a avancer  
+                if(mCarrotte[i][j]){    //Verifie la presence de carrote
+                    mCarrotte[i][j] = false;
+                    mLapins[i].donneCarotte();
+                }
+            }
+        }
     }
     /**
     * Retourne une represention sous forme de chaine de caracteres de la piste de course. 
