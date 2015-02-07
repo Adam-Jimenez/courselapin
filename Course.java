@@ -99,7 +99,18 @@ public class Course{
     * @return String la chaine de caractere representant la Course
     */
     public String toString(){
-        return "";
+        String course = "";
+        for(int i = 0; i<mLapins.length; i++){
+            course += mLapins[i].toString()+'\n'; 
+        }
+        for(int i = 0; i<mCarrotte.length; i++){
+            for(int j = 0; j<mCarrotte[0].length; j++){
+                course+= mCarrotte[i][j]? "o|" : " |";
+            }
+            course+= i+" \n";
+        }
+
+        return course;
     }
     
     /**

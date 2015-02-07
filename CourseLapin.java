@@ -124,6 +124,7 @@ public class CourseLapin extends JPanel implements Runnable{
             }
 
             repaint();
+            System.out.println(mPiste); //DEBUG
 
             timeDiff = System.currentTimeMillis() - beforeTime;
             sleep = DELAY - timeDiff;
